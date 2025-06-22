@@ -4,6 +4,95 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./tabzy.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="demo1">
+      <div class="tabmadal">
+        <ul id="tab1" class="tabs1">
+          <li class="menu-item1">
+            <a href="#content-item-1">Item 1</a>
+          </li>
+          <li class="menu-item2">
+            <a href="#content-item-2">Item 2</a>
+          </li>
+          <li class="menu-item3">
+            <a href="#content-item-3">Item 3</a>
+          </li>
+          <li class="menu-item4">
+            <a href="#content-item-4">Item 4</a>
+          </li>
+        </ul>
+        <div class="line-heightlight"></div>
+      </div>
+
+      <div class="panels">
+        <div id="content-item-1">
+          <h2>item1</h2>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo illum
+          exercitationem, at, dolore pariatur provident deleniti vero sint
+          dolorum,
+        </div>
+        <div id="content-item-2">
+          <h2>item2</h2>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo illum
+        </div>
+        <div id="content-item-3">
+          <h2>item3</h2>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo illum
+        </div>
+        <div id="content-item-4">
+          <h2>item4</h2>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo illum
+        </div>
+      </div>
+    </div>
+    <div class="demo2">
+      <ul id="tab2" class="tabs2">
+        <li class="menu-item1">
+          <a href="#content-item-A">Item A</a>
+        </li>
+        <li class="menu-item2">
+          <a href="#content-item-B">Item B</a>
+        </li>
+        <li class="menu-item3">
+          <a href="#content-item-C">Item C</a>
+        </li>
+        <li class="menu-item4">
+          <a href="#content-item-D">Item D</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="content-item-A">Item A</div>
+    <div id="content-item-B">Item B</div>
+    <div id="content-item-C">Item C</div>
+    <div id="content-item-D">Item D</div>
+    <script src="./tabzy.js"></script>
+    <script>
+      const tab = new Tabzy("#tab1", {
+        remember: true,
+        onChange: createLine,
+      });
+
+      function createLine() {
+        console.log(tab.current);
+        const activeTab = tab.current;
+        const tabLi = activeTab.closest("li");
+        const line = tab.container.nextElementSibling;
+        line.style.height = `${tabLi.offsetHeight}px`;
+        line.style.transform = `translateY(${tabLi.offsetTop}px)`;
+      }
+
+      createLine();
+
+      const tab2 = new Tabzy("#tab2", {
+        remember: true,
+        onChange: (data) => {
+          console.log(data);
+        },
+      });
+    </script>
+  </body>
 </html>

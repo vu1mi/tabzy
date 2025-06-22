@@ -1,0 +1,47 @@
+.demo1 {
+  display: flex;
+  background-color: #e6e8e8;
+  width: min(1000px, calc(100% - 10px));
+  margin: auto;
+}
+ul {
+  margin: 0;
+}
+.tabmadal {
+  /* display: flex; */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  background-color: #b3b6b6;
+}
+.tabmadal {
+  position: relative;
+}
+.tabs1 > li {
+  border-bottom: 1px solid #ccc;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.panels {
+  flex: 4;
+  margin-left: 60px;
+  display: flex;
+  align-items: center;
+}
+.panels > div {
+  padding: 0 150px 0 0;
+}
+
+.tabmadal .tabs1 > li a {
+  color: black;
+}
+.line-heightlight {
+  position: absolute;
+  width: 4px;
+  background-color: orange;
+  transition: transform 0.3s ease, height 0.3s ease;
+}

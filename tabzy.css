@@ -1,0 +1,14 @@
+.element--active a {
+  color: blue;
+  font-weight: 700;
+}
+a {
+  font-size: 20px;
+}
+ul {
+  list-style: none;
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+}
